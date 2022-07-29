@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "./styles.module.scss";
 import { getPrismicClient } from "../../services/prismic";
 import { RichText } from "prismic-dom";
+import Link from "next/link";
 
 type Publication = {
     slug: string,
@@ -24,11 +25,13 @@ export default function Posts({ formatedPublications }: PostsProps) {
             <main className={styles.container}>
                 <div className={styles.posts}>
                     {formatedPublications.map(publication => (
-                        <a key={publication.slug} href="#">
-                            <time>{publication.updatedAt}</time>
-                            <strong>{publication.title}</strong>
-                            <p>{publication.excerpt}</p>
-                        </a>
+                        <Link href={`/posts/${publication.slug}`} key={publication.slug}>
+                            <a key={publication.slug}>
+                                <time>{publication.updatedAt}</time>
+                                <strong>{publication.title}</strong>
+                                <p>{publication.excerpt}</p>
+                            </a>
+                        </Link>
                     ))}
 
                     <a href="#">

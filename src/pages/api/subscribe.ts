@@ -13,7 +13,7 @@ type User = {
     }
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function (req: NextApiRequest, res: NextApiResponse) {
     if (req.method === "POST") {
         //getSession() - recuperando os dados de login do usuário através da req (requisição)
         const session = await getSession({ req });
