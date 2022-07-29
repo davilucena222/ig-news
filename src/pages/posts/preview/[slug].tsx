@@ -61,9 +61,7 @@ export default function PostPreview({ publication }: PostPreviewProps) {
 //as páginas que não possuem parâmetros dinâmicos são geradas de forma estática automaticamente, exemplo: arquivos index.tsx
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
-        paths: [
-            { params: { slug: "boas-praticas-para-devs-em-inicio-de-carreira" } },
-        ],
+        paths: [],
         fallback: "blocking",
     }
 }
