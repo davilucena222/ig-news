@@ -18,14 +18,14 @@ interface PostPreviewProps {
 }
 
 export default function PostPreview({ publication }: PostPreviewProps) {
-  // const { data: session } = useSession();
-  // const router = useRouter();
+  const { data: session } = useSession();
+  const router = useRouter();
 
-  // useEffect(() => {
-  //   if (session?.activeSubscription) {
-  //     router.push(`/posts/${publication.slug}`);
-  //   }
-  // }, [session]);
+  useEffect(() => {
+    if (session?.activeSubscription) {
+      router.push(`/posts/${publication.slug}`);
+    }
+  }, [session]);
 
   return (
     <>

@@ -5,10 +5,10 @@ import { RichText } from "prismic-dom";
 import Link from "next/link";
 
 type Publication = {
-    slug: string,
-    title: string,
-    excerpt: string,
-    updatedAt: string
+    slug: string;
+    title: string;
+    excerpt: string;
+    updatedAt: string;
 }
 
 interface PostsProps {
