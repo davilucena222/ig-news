@@ -23,7 +23,7 @@ This project was developed with the following tecnologies:
 
 
 ## 💡 About the project 
-Ignews is an application made for who wants to read a newsletter about everything that happens inside of the technology, be updated when you wake up and started your day with the bests news that you can read it. 
+Ignews is an application made it for who wants to read a newsletter about everything that happens inside of the technology React, be updated when you wake up and started your day with the bests news that you can read it. 
 
 To gain access to the Ignews first you need to login with your GitHub account and after that subscribe to the newsletter and you will can read any newsletter publication. After the login you will see a post page with some publications and if you are subscribed just click at any title to be redirect to the publication and enjoy your reading.
 
