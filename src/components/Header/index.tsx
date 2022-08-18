@@ -2,7 +2,7 @@ import { SignInButton } from "../SignInButton";
 import styles from "./styles.module.scss";
 import { ActiveLink } from "../ActiveLink";
 
-export default function Header() {
+export function Header() {
 
   return(
     <header className={styles.headerContainer}>
