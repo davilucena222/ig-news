@@ -66,3 +66,7 @@
 <p>Para mais dúvidas: consultar arquivo "SubscribeButton.spec.tsx" do projeto Ignews.</p>
 
 <p>OBS: sempre que a função/funcionalidade externa for uma Promise utiliza a função de teste mockResolvedValueOnce().</p>
+
+# Para dúvidas em testes de forma assíncrona 
+
+<p>Basta consultar o arquivo Async.spec.tsx do projeto Ig-news.</p>
