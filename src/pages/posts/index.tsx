@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import { getPrismicClient } from "../../services/prismic";
 import { RichText } from "prismic-dom";
 import Link from "next/link";
+import { GetStaticProps } from "next";
 
 type Publication = {
     slug: string;
@@ -26,7 +27,7 @@ export default function Posts({ formatedPublications }: PostsProps) {
                 <div className={styles.posts}>
                     {formatedPublications.map(publication => (
                         <Link href={`/posts/${publication.slug}`} key={publication.slug}>
-                            <a key={publication.slug}>
+                            <a>
                                 <time>{publication.updatedAt}</time>
                                 <strong>{publication.title}</strong>
                                 <p>{publication.excerpt}</p>
@@ -50,8 +51,9 @@ export default function Posts({ formatedPublications }: PostsProps) {
     );
 }
 
-export async function getServerSideProps() {
-    const prismic = getPrismicClient()
+// export async function getServerSideProps() {
+export const getStaticProps: GetStaticProps = async () => {
+    const prismic = getPrismicClient();
 
     const publications = await prismic.getByType("publication", {
         pageSize: 100,
