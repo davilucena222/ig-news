@@ -44,8 +44,25 @@
   Quando o componente for simulado pelos testes ele vai utilizar a "mock" que foi criada para simular o retorno da funcionalidade externa e não funcionalidade externa original que está dentro dele.
 </p>
 
-# Observação para sempre for escrever testes unitários 
+# Observação para sempre que for escrever testes unitários 
 
 <p>
   Quando estiver escrevendo testes unitários e o componente depender de algo externo, pode ser uma biblioteca por exemplo, ou seja, de algo que não vai funcionar necessariamente dentro do teste do componente em si basta criar um "mock" e "mockar" o funcionamento dessa funcionalidade externa botando um retorno fictício para aquela função.
 </p>
+
+# Observação para sempre que for escrever testes unitários para um componente que renderiza outros componentes e eles possuem funcionalidades externa
+
+<p>
+  Para tal problemática o ideal é utilizar uma biblioteca chamada "ts-jest" para ajudar na configuração dessa funcionalidade externa para cada caso de teste. Por exemplo: o estado de um botão que diferencia quando o usuário autenticado na aplicação e quando ele não está autenticado, ou seja, para cada um desses casos haverá testes diferentes.
+</p>
+
+# Biblioteca ts-jest
+
+<ul>
+  <li>Função mockReturnValueOnce() -> Só é disparada uma vez dentro do escopo em que ela está, ou seja, quando a função render() renderizar o componente que está dentro do escopo it() ou test()</li>
+  <li>Função mockReturnValue() -> É disparada a cada vez que a função render() renderizar um componente, independente do escopo que essa renderização for realizada a função mockReturnValue() será disparada mesmo ela estando fora do escopo que a renderização foi disparada.</li>
+</ul>
+
+<p>Para mais dúvidas: consultar arquivo "SubscribeButton.spec.tsx" do projeto Ignews.</p>
+
+<p>OBS: sempre que a função/funcionalidade externa for uma Promise utiliza a função de teste mockResolvedValueOnce().</p>

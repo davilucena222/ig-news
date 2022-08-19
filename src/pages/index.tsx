@@ -8,7 +8,7 @@ import styles from "./home.module.scss";
 interface HomeProps {
   product: {
     priceId: string;
-    amount: number;
+    amount: string;
   }
 }
 
@@ -27,7 +27,7 @@ export default function Home({ product }: HomeProps) {
             Get access to to all the notifications <br />
             <span>for {product.amount} month</span>
           </p>
-          <SubscribeButton priceId={product.priceId} />
+          <SubscribeButton />
         </section>
 
         <img src="/images/avatar.svg" alt="Girl coding" />
@@ -40,6 +40,7 @@ export default function Home({ product }: HomeProps) {
 //escopo de código que é executado dentro do servidor Node que executa a aplição em React junto com o Next
 //o servidor Node roda no terminal local do desenvolvimento da aplicação
 export const getStaticProps: GetStaticProps = async() => {
+  //requisição sendo realizada ao stripe
   const price = await stripe.prices.retrieve("price_1LOkc8A23UxAL6bewYiepHo0");
 
   const product = {
