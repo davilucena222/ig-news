@@ -20,6 +20,7 @@ This project was developed with the following tecnologies:
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [React Dom](https://pt-br.reactjs.org/docs/react-dom.html)
 - [Axios](https://axios-http.com/ptbr/docs/intro)
+- [Jest](https://jestjs.io/pt-BR/)
 
 
 ## 💡 About the project 
@@ -48,6 +49,9 @@ To access the Ignews in production just <a href="https://ignews-three-sepia.verc
   </li>
   <li>
     Payment via credit card
+  </li>
+  <li>
+    Tests for all the components 
   </li>
 </ul>
 
